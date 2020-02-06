@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jSP-UU-Lj4">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--我的-->
+        <scene sceneID="XZ7-Fg-Q2I">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Q8-jY-k73" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="fep-FB-RDv" customClass="SelfViewController" customModule="RiveR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pgn-g1-U36">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XAd-5E-D0K"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="我的" image="person.crop.circle.fill" catalog="system" landscapeImage="person.crop.circle.fill" largeContentSizeImage="person.crop.circle.fill" id="3Kb-DF-8nX"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="582.60869565217399" y="270.6521739130435"/>
+        </scene>
+        <!--主页-->
+        <scene sceneID="gQk-cL-0fS">
+            <objects>
+                <viewController title="主页" id="Dbx-bV-sCT" customClass="MainPageViewController" customModule="RiveR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m9V-Ao-xe7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAS-Nc-Xon">
+                                <rect key="frame" x="186" y="216" width="42" height="20.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XAS-Nc-Xon" firstAttribute="centerX" secondItem="m9V-Ao-xe7" secondAttribute="centerX" id="JOL-Dh-KBa"/>
+                            <constraint firstItem="XAS-Nc-Xon" firstAttribute="top" secondItem="AbA-sL-mA4" secondAttribute="top" constant="262" id="mW4-Ht-9yW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AbA-sL-mA4"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="TJO-DB-SjZ"/>
+                    <connections>
+                        <outlet property="Label" destination="XAS-Nc-Xon" id="ibW-eZ-gmq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHE-0h-dWg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1349.2753623188407" y="270.6521739130435"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="lKH-bD-g2H">
+            <objects>
+                <tabBarController id="jSP-UU-Lj4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tOz-Hz-bA8"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2RE-qt-1Ns">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Dbx-bV-sCT" kind="relationship" relationship="viewControllers" id="e9P-2S-vAw"/>
+                        <segue destination="fep-FB-RDv" kind="relationship" relationship="viewControllers" id="7eR-rz-TUw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PH6-Cl-pis" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-361" y="-483"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person.crop.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
+</document>
