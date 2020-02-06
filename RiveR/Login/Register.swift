@@ -58,11 +58,11 @@ class Register: UIView, NibLoadable, UITextFieldDelegate{
     }
     
     func show(){
-        account.placeholder = "请输入账号"
-        username.placeholder = "请输入昵称"
-        password.placeholder = "请输入密码"
+        account.placeholder = Placeholder().account
+        username.placeholder = Placeholder().username
+        password.placeholder = Placeholder().password
         password.isSecureTextEntry = true
-        status.placeholder = "请输入国籍"
+        status.placeholder = Placeholder().status
     }
     
 }

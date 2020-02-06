@@ -43,6 +43,7 @@ class UserGet {
                                                 self.user.set_password(password: json[Users_struct().userpasswd].string!)
                                                 self.user.set_status(status: json[Users_struct().userStatus].string!)
                                                 Defaults().remove()
+                                                Defaults().save()
                                                 Defaults().save(users: self.user)
                                                 
                                             }}) as URLSessionTask

@@ -31,8 +31,9 @@ class Identity: UIView, NibLoadable, UITableViewDelegate, UITableViewDataSource{
     }
     
     func show() {
-        Identity.dataArray = ["拍摄的照片是否保存入系统相册"]
-        tableview.register(UINib.init(nibName: "IndentityTableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCellId")
+        Identity.dataArray = ["拍摄的照片是否保存入系统相册", "账号设置"]
+        tableview.register(UINib.init(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCellId")
+        tableview.register(UINib.init(nibName: "SettingTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingTableViewCellId")
         //设置代理和数据源
         tableview.delegate = self
         tableview.dataSource = self
@@ -63,12 +64,30 @@ class Identity: UIView, NibLoadable, UITableViewDelegate, UITableViewDataSource{
         return 95
     }
     
+    
     //返回一个cell对象
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: IndentityTableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellId", for: indexPath) as! IndentityTableViewCell
-        cell.label.text = Identity.dataArray?[indexPath.row]
-        cell.switch.addTarget(self, action: #selector(editSwitchDidChange(_:)), for: .valueChanged)
-        return cell
+
+        switch indexPath.row {
+        case 0: do {
+            let cell: IndentityTableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellId", for: indexPath) as! IndentityTableViewCell
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none;
+            cell.label.text = Identity.dataArray?[indexPath.row]
+            cell.switch.isOn = Defaults.defaults.bool(forKey: Setting().saving)
+            cell.switch.addTarget(self, action: #selector(editSwitchDidChange(_:)), for: .valueChanged)
+            return cell
+        }
+        default: do{
+            let cell: SettingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCellId", for: indexPath) as! SettingTableViewCell
+            cell.label.text = Identity.dataArray?[indexPath.row]
+            return cell
+            }
+        }
+
+    }
+    
+    func tableViewDidEndMultipleSelectionInteraction(_ tableView: UITableView) {
+        <#code#>
     }
     
     //监听cell的开关状态

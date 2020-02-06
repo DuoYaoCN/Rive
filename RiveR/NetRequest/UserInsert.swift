@@ -44,6 +44,7 @@ class UserInsert {
                                                 self.user.set_password(password: password)
                                                 self.user.set_status(status: status)
                                                 Defaults().remove()
+                                                Defaults().save()
                                                 Defaults().save(users: self.user)
                                                 
                                             }}) as URLSessionTask

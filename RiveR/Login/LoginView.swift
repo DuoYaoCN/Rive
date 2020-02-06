@@ -63,8 +63,8 @@ class LoginView: UIView, NibLoadable, UITextFieldDelegate{
     }
     
     func show(){
-        account.placeholder = "请输入账号"
-        password.placeholder = "请输入密码"
+        account.placeholder = Placeholder().account
+        password.placeholder = Placeholder().password
         password.isSecureTextEntry = true
     }
     

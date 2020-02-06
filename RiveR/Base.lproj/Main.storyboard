@@ -7,6 +7,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Item-->
+        <scene sceneID="tKj-U6-1mR">
+            <objects>
+                <navigationController id="syG-ge-p0G" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="FR8-6n-I6P"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hbz-id-4Ib">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fep-FB-RDv" kind="relationship" relationship="rootViewController" id="OU4-L4-0g4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S5T-U3-P6F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="419" y="271"/>
+        </scene>
         <!--我的-->
         <scene sceneID="XZ7-Fg-Q2I">
             <objects>
@@ -19,9 +36,10 @@
                         <viewLayoutGuide key="safeArea" id="XAd-5E-D0K"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="我的" image="person.crop.circle.fill" catalog="system" landscapeImage="person.crop.circle.fill" largeContentSizeImage="person.crop.circle.fill" id="3Kb-DF-8nX"/>
+                    <navigationItem key="navigationItem" id="qpz-2k-5Vw"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="582.60869565217399" y="270.6521739130435"/>
+            <point key="canvasLocation" x="419" y="1013"/>
         </scene>
         <!--主页-->
         <scene sceneID="gQk-cL-0fS">
@@ -66,7 +84,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Dbx-bV-sCT" kind="relationship" relationship="viewControllers" id="e9P-2S-vAw"/>
-                        <segue destination="fep-FB-RDv" kind="relationship" relationship="viewControllers" id="7eR-rz-TUw"/>
+                        <segue destination="syG-ge-p0G" kind="relationship" relationship="viewControllers" id="cVe-tc-R5i"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PH6-Cl-pis" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

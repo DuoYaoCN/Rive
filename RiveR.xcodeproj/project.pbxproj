@@ -31,8 +31,11 @@
 		18D3978623EB07E10000C527 /* Register.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D3978523EB07E10000C527 /* Register.xib */; };
 		18D3978823EB0AA10000C527 /* UserInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3978723EB0AA10000C527 /* UserInsert.swift */; };
 		18D3978D23EBCF290000C527 /* IndentityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3978B23EBCF290000C527 /* IndentityTableViewCell.swift */; };
-		18D3978E23EBCF290000C527 /* IndentityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D3978C23EBCF290000C527 /* IndentityTableViewCell.xib */; };
+		18D3978E23EBCF290000C527 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D3978C23EBCF290000C527 /* TableViewCell.xib */; };
 		18D3979023EBD0BE0000C527 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3978F23EBD0BE0000C527 /* Setting.swift */; };
+		18D397B523EBEA970000C527 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397B423EBEA970000C527 /* Placeholder.swift */; };
+		18D397B823EBF2AF0000C527 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397B623EBF2AF0000C527 /* SettingTableViewCell.swift */; };
+		18D397BB23EC05150000C527 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D397BA23EC05150000C527 /* SettingTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +65,11 @@
 		18D3978523EB07E10000C527 /* Register.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Register.xib; sourceTree = "<group>"; };
 		18D3978723EB0AA10000C527 /* UserInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInsert.swift; sourceTree = "<group>"; };
 		18D3978B23EBCF290000C527 /* IndentityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndentityTableViewCell.swift; sourceTree = "<group>"; };
-		18D3978C23EBCF290000C527 /* IndentityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndentityTableViewCell.xib; sourceTree = "<group>"; };
+		18D3978C23EBCF290000C527 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		18D3978F23EBD0BE0000C527 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		18D397B423EBEA970000C527 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		18D397B623EBF2AF0000C527 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		18D397BA23EC05150000C527 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 				18D3976723E94FBD0000C527 /* SwiftJSON.swift */,
 				18D3976C23EA65E60000C527 /* Defaults.swift */,
 				18D3977523EA77770000C527 /* HTTP_struct.swift */,
+				18D397B423EBEA970000C527 /* Placeholder.swift */,
 			);
 			name = Dependence;
 			sourceTree = "<group>";
@@ -162,7 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				18D3978B23EBCF290000C527 /* IndentityTableViewCell.swift */,
-				18D3978C23EBCF290000C527 /* IndentityTableViewCell.xib */,
+				18D397BA23EC05150000C527 /* SettingTableViewCell.xib */,
+				18D3978C23EBCF290000C527 /* TableViewCell.xib */,
+				18D397B623EBF2AF0000C527 /* SettingTableViewCell.swift */,
 			);
 			path = tableview;
 			sourceTree = "<group>";
@@ -227,8 +236,9 @@
 			files = (
 				18D3975D23E946EE0000C527 /* LaunchScreen.storyboard in Resources */,
 				18D3975A23E946EE0000C527 /* Assets.xcassets in Resources */,
+				18D397BB23EC05150000C527 /* SettingTableViewCell.xib in Resources */,
 				18D3975523E946E90000C527 /* Main.storyboard in Resources */,
-				18D3978E23EBCF290000C527 /* IndentityTableViewCell.xib in Resources */,
+				18D3978E23EBCF290000C527 /* TableViewCell.xib in Resources */,
 				18D3977823EA8D480000C527 /* login.xib in Resources */,
 				18D3978623EB07E10000C527 /* Register.xib in Resources */,
 				18D3977A23EA8E8E0000C527 /* indentity.xib in Resources */,
@@ -253,6 +263,8 @@
 				18D3974E23E946E90000C527 /* AppDelegate.swift in Sources */,
 				18D3977623EA77770000C527 /* HTTP_struct.swift in Sources */,
 				18D3977F23EA99720000C527 /* NibLoadable.swift in Sources */,
+				18D397B523EBEA970000C527 /* Placeholder.swift in Sources */,
+				18D397B823EBF2AF0000C527 /* SettingTableViewCell.swift in Sources */,
 				18D3976D23EA65E60000C527 /* Defaults.swift in Sources */,
 				18D3978823EB0AA10000C527 /* UserInsert.swift in Sources */,
 				18D3977D23EA90D50000C527 /* LoginView.swift in Sources */,
