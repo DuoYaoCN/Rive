@@ -67,7 +67,7 @@ class AMViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             //注销
             Defaults().remove()
             self.navigationController?.popToRootViewController(animated: true)
-            SelfViewController().viewDidLoad()
+            self.view.removeFromSuperview()
         }
         tableView.cellForRow(at: indexPath)?.isSelected = false
     }

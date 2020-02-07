@@ -44,16 +44,28 @@ class LoginView: UIView, NibLoadable, UITextFieldDelegate{
             group.notify(queue: globalQueue, execute: {
                 //检测到所有的任务都执行完了，我们可以做一个通知或者说UI的处理
                 Thread.sleep(forTimeInterval: 2)
-                DispatchQueue.main.async {
-                    if verify.error == nil && get.error == nil{
+                if verify.dat == nil && get.dat == nil{
+                    Thread.sleep(forTimeInterval: 5)
+                    DispatchQueue.main.async {
+                        if verify.dat == nil && get.dat == nil{
+                            let identity = Identity.loadFromNib("indentity")
+                            identity.show()
+                            roll.removeFromSuperview()
+                            self.removeFromSuperview()
+                            UIViewController.current()?.view.addSubview(identity)
+                        }
+                        else{
+                            print("error")
+                        }
+                    }
+                }
+                else{
+                    DispatchQueue.main.async {
                         let identity = Identity.loadFromNib("indentity")
                         identity.show()
-                        self.removeFromSuperview()
                         roll.removeFromSuperview()
-                        self.addSubview(identity)
-                    }
-                    else{
-                        print("error")
+                        self.removeFromSuperview()
+                        UIViewController.current()?.view.addSubview(identity)
                     }
                 }
             })
@@ -85,5 +97,9 @@ class LoginView: UIView, NibLoadable, UITextFieldDelegate{
         //self(小写) 当前对象
         let loadName = nibname == nil ? "\(self)" : nibname!
         return Bundle.main.loadNibNamed(loadName, owner: nil, options: nil)?.first as! Self
+    }
+    
+    @objc func jumb(){
+        print("success")
     }
 }

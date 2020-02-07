@@ -19,6 +19,7 @@ class UserInsert {
     //请求API接口
     var user = Users()
     var error : Error?
+    var dat : Data?
     init(){
     }
     func  request(account:String, username:String, password:String, status:String) {
@@ -37,6 +38,7 @@ class UserInsert {
                                             if error != nil{
                                                 self.error = error!
                                             }else if let d = data{
+                                                self.dat = d
                                                  let newStr = String(data: d, encoding: String.Encoding.utf8)
                                                 //注册后自动登录
                                                 self.user.set_id(id: newStr!)

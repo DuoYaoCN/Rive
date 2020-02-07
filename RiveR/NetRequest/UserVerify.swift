@@ -18,6 +18,7 @@ class UserVerify {
     //请求API接口
     var result : String?
     var error : Error?
+    var dat : Data?
     init(){
     }
     func  request(account:String, password:String) {
@@ -36,6 +37,7 @@ class UserVerify {
                                             if error != nil{
                                                 self.error = error!
                                             }else if let d = data{
+                                                self.dat = d
                                                 let newStr = String(data: d, encoding: String.Encoding.utf8)
                                                 self.result = newStr
                                             }}) as URLSessionTask

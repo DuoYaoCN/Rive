@@ -40,15 +40,28 @@ class Register: UIView, NibLoadable, UITextFieldDelegate{
             })
             group.notify(queue: globalQueue, execute: {
                 Thread.sleep(forTimeInterval: 2)
-                DispatchQueue.main.async {
-                    if insert.error == nil{
-                        let identity = Identity.loadFromNib("indentity")
+                if insert.dat == nil{
+                    Thread.sleep(forTimeInterval: 5)
+                    DispatchQueue.main.async {
+                        if insert.error == nil{
+                            let identity = Identity.loadFromNib("indentity")
+                            identity.show()
+                            roll.removeFromSuperview()
+                            self.removeFromSuperview()
+                            UIViewController.current()?.view.addSubview(identity)
+                        }
+                        else{
+                            print("error")
+                        }
+                    }
+                }
+                else{
+                    DispatchQueue.main.async {
+                       let identity = Identity.loadFromNib("indentity")
                         identity.show()
                         roll.removeFromSuperview()
-                        self.addSubview(identity)
-                    }
-                    else{
-                        print("error")
+                        self.removeFromSuperview()
+                        UIViewController.current()?.view.addSubview(identity)
                     }
                 }
             })

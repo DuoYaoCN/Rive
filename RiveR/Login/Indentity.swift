@@ -21,7 +21,8 @@ class Identity: UIView, NibLoadable, UITableViewDelegate, UITableViewDataSource{
         Defaults().remove()
         let login = LoginView.loadFromNib("login")
         login.show()
-        self.addSubview(login)
+        self.removeFromSuperview()
+        UIViewController.current()?.view.addSubview(login)
         
     }
     func loadFromNib(_ nibname: String? = nil) -> Self {//Self (大写) 当前类对象
