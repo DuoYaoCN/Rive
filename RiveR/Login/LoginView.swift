@@ -27,6 +27,12 @@ class LoginView: UIView, NibLoadable, UITextFieldDelegate{
             let acc = account.text
             let pwd = password.text
             //线程后台--线程登录
+            var roll : RollView!
+            let rect = CGRect(x: self.center.x-50, y: self.center.y-50, width: 100, height: 100)
+            roll = RollView(frame: rect)
+            roll.backgroundColor = UIColor(displayP3Red: 182, green: 179, blue: 182, alpha: 0.8)
+            //roll.setLabel(label: "正在登录")
+            self.addSubview(roll)
             let group = DispatchGroup()
             let globalQueue = DispatchQueue.global()//创建一个全局队列
             globalQueue.async(group: group, execute: {
@@ -35,13 +41,20 @@ class LoginView: UIView, NibLoadable, UITextFieldDelegate{
             globalQueue.async(group: group, execute: {
                 get.request(account: acc!)
             })
-            Thread.sleep(forTimeInterval: 2)
             group.notify(queue: globalQueue, execute: {
                 //检测到所有的任务都执行完了，我们可以做一个通知或者说UI的处理
+                Thread.sleep(forTimeInterval: 2)
                 DispatchQueue.main.async {
-                    let identity = Identity.loadFromNib("indentity")
-                    identity.show()
-                    self.addSubview(identity)
+                    if verify.error == nil && get.error == nil{
+                        let identity = Identity.loadFromNib("indentity")
+                        identity.show()
+                        self.removeFromSuperview()
+                        roll.removeFromSuperview()
+                        self.addSubview(identity)
+                    }
+                    else{
+                        print("error")
+                    }
                 }
             })
         }

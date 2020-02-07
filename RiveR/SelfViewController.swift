@@ -17,19 +17,36 @@ class SelfViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Defaults().get(key: Users_struct().username).elementsEqual(""))
         // Do any additional setup after loading the view.
+        //let aSelector : Selector = #selector(SelfViewController.removeSubview)
+        //let tapGesture = UITapGestureRecognizer(target:self, action: aSelector)
+        //self.view.addGestureRecognizer(tapGesture)
+        
         if Defaults().get(key: Users_struct().username).elementsEqual("") || Defaults.defaults.bool(forKey: Users_struct().username){
             let login = LoginView.loadFromNib("login")
             login.show()
-            view.addSubview(login)
+            self.view.removeFromSuperview()
+            print("1\t"+"\(self.view.subviews.count)")
+            self.view.addSubview(login)
+            print("2\t"+"\(self.view.subviews.count)")
         }
         else{
             let identity = Identity.loadFromNib("indentity")
             identity.show()
-            view.addSubview(identity)
+            self.view.addSubview(identity)
             //label.text = Defaults().get(key: Users_struct().username)
         }
     }
+    @objc func removeSubview(){
+        print("Start remove sibview")
+        if let viewWithTag = self.view.viewWithTag(self.view.subviews.count - 1) {
+            viewWithTag.removeFromSuperview()
+        }else{
+            print("No!")
+        }
+    }
+
     
     //键盘弹起
     @objc func keyboardWillAppear(notification: NSNotification) {

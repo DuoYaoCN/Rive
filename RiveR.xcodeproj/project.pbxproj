@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18CC671A23ED3CD700A6CF4E /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC671923ED3CD700A6CF4E /* RollView.swift */; };
 		18D3974E23E946E90000C527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3974D23E946E90000C527 /* AppDelegate.swift */; };
 		18D3975023E946E90000C527 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3974F23E946E90000C527 /* SceneDelegate.swift */; };
 		18D3975223E946E90000C527 /* SelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3975123E946E90000C527 /* SelfViewController.swift */; };
@@ -36,9 +37,15 @@
 		18D397B523EBEA970000C527 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397B423EBEA970000C527 /* Placeholder.swift */; };
 		18D397B823EBF2AF0000C527 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397B623EBF2AF0000C527 /* SettingTableViewCell.swift */; };
 		18D397BB23EC05150000C527 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D397BA23EC05150000C527 /* SettingTableViewCell.xib */; };
+		18D397BD23EC45A80000C527 /* ViewControllerExension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397BC23EC45A80000C527 /* ViewControllerExension.swift */; };
+		18D397C123EC4EB90000C527 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397C023EC4EB90000C527 /* UpdateViewController.swift */; };
+		18D397C623EC51AE0000C527 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397C423EC51AE0000C527 /* AccountTableViewCell.swift */; };
+		18D397C723EC51AE0000C527 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D397C523EC51AE0000C527 /* AccountTableViewCell.xib */; };
+		18D397C923EC53370000C527 /* AMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397C823EC53370000C527 /* AMViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18CC671923ED3CD700A6CF4E /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		18D3974A23E946E90000C527 /* RiveR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiveR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D3974D23E946E90000C527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D3974F23E946E90000C527 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +77,11 @@
 		18D397B423EBEA970000C527 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		18D397B623EBF2AF0000C527 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		18D397BA23EC05150000C527 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		18D397BC23EC45A80000C527 /* ViewControllerExension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExension.swift; sourceTree = "<group>"; };
+		18D397C023EC4EB90000C527 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		18D397C423EC51AE0000C527 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		18D397C523EC51AE0000C527 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		18D397C823EC53370000C527 /* AMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18CC671823ED3CAC00A6CF4E /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				18CC671923ED3CD700A6CF4E /* RollView.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		18D3974123E946E90000C527 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +122,7 @@
 		18D3974C23E946E90000C527 /* RiveR */ = {
 			isa = PBXGroup;
 			children = (
+				18CC671823ED3CAC00A6CF4E /* Notification */,
 				18D3977B23EA90AC0000C527 /* Login */,
 				18D3976E23EA6A830000C527 /* Domain */,
 				18D3976923E9501D0000C527 /* NetRequest */,
@@ -109,12 +130,14 @@
 				18D3974D23E946E90000C527 /* AppDelegate.swift */,
 				18D3974F23E946E90000C527 /* SceneDelegate.swift */,
 				18D3975123E946E90000C527 /* SelfViewController.swift */,
+				18D397C023EC4EB90000C527 /* UpdateViewController.swift */,
 				18D3976423E9498C0000C527 /* MainPageViewController.swift */,
 				18D3975323E946E90000C527 /* Main.storyboard */,
 				18D3975923E946EE0000C527 /* Assets.xcassets */,
 				18D3975B23E946EE0000C527 /* LaunchScreen.storyboard */,
 				18D3975E23E946EE0000C527 /* Info.plist */,
 				18D3975623E946E90000C527 /* RiveR.xcdatamodeld */,
+				18D397C823EC53370000C527 /* AMViewController.swift */,
 			);
 			path = RiveR;
 			sourceTree = "<group>";
@@ -129,6 +152,7 @@
 				18D3976C23EA65E60000C527 /* Defaults.swift */,
 				18D3977523EA77770000C527 /* HTTP_struct.swift */,
 				18D397B423EBEA970000C527 /* Placeholder.swift */,
+				18D397BC23EC45A80000C527 /* ViewControllerExension.swift */,
 			);
 			name = Dependence;
 			sourceTree = "<group>";
@@ -172,6 +196,8 @@
 				18D397BA23EC05150000C527 /* SettingTableViewCell.xib */,
 				18D3978C23EBCF290000C527 /* TableViewCell.xib */,
 				18D397B623EBF2AF0000C527 /* SettingTableViewCell.swift */,
+				18D397C423EC51AE0000C527 /* AccountTableViewCell.swift */,
+				18D397C523EC51AE0000C527 /* AccountTableViewCell.xib */,
 			);
 			path = tableview;
 			sourceTree = "<group>";
@@ -235,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D3975D23E946EE0000C527 /* LaunchScreen.storyboard in Resources */,
+				18D397C723EC51AE0000C527 /* AccountTableViewCell.xib in Resources */,
 				18D3975A23E946EE0000C527 /* Assets.xcassets in Resources */,
 				18D397BB23EC05150000C527 /* SettingTableViewCell.xib in Resources */,
 				18D3975523E946E90000C527 /* Main.storyboard in Resources */,
@@ -255,14 +282,17 @@
 				18D3978223EABB260000C527 /* Indentity.swift in Sources */,
 				18D3976523E9498C0000C527 /* MainPageViewController.swift in Sources */,
 				18D3977023EA6A8F0000C527 /* Users_struct.swift in Sources */,
+				18D397C923EC53370000C527 /* AMViewController.swift in Sources */,
 				18D3977223EA6B8A0000C527 /* Users.swift in Sources */,
 				18D3976823E94FBD0000C527 /* SwiftJSON.swift in Sources */,
 				18D3976B23E950530000C527 /* UserVerify.swift in Sources */,
 				18D3975223E946E90000C527 /* SelfViewController.swift in Sources */,
 				18D3977423EA71D90000C527 /* UsersGet.swift in Sources */,
+				18CC671A23ED3CD700A6CF4E /* RollView.swift in Sources */,
 				18D3974E23E946E90000C527 /* AppDelegate.swift in Sources */,
 				18D3977623EA77770000C527 /* HTTP_struct.swift in Sources */,
 				18D3977F23EA99720000C527 /* NibLoadable.swift in Sources */,
+				18D397C623EC51AE0000C527 /* AccountTableViewCell.swift in Sources */,
 				18D397B523EBEA970000C527 /* Placeholder.swift in Sources */,
 				18D397B823EBF2AF0000C527 /* SettingTableViewCell.swift in Sources */,
 				18D3976D23EA65E60000C527 /* Defaults.swift in Sources */,
@@ -271,8 +301,10 @@
 				18D3975823E946E90000C527 /* RiveR.xcdatamodeld in Sources */,
 				18D3978423EB07D50000C527 /* Register.swift in Sources */,
 				18D3979023EBD0BE0000C527 /* Setting.swift in Sources */,
+				18D397BD23EC45A80000C527 /* ViewControllerExension.swift in Sources */,
 				18D3978D23EBCF290000C527 /* IndentityTableViewCell.swift in Sources */,
 				18D3975023E946E90000C527 /* SceneDelegate.swift in Sources */,
+				18D397C123EC4EB90000C527 /* UpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

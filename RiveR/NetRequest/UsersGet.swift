@@ -17,6 +17,7 @@ class UserGet {
     private let url = "get"
     //请求API接口
     var user = Users()
+    var error :Error?
     init(){
     }
     func  request(account:String) {
@@ -34,7 +35,7 @@ class UserGet {
         let dataTask = session.dataTask(with: request,
                                         completionHandler: {(data, response, error) -> Void in
                                             if error != nil{
-                                                print(error.debugDescription)
+                                                self.error = error!
                                             }else if let d = data{
                                                 json = try! JSON(data: d)
                                                 self.user.set_id(id: json[Users_struct().userId].string!)

@@ -18,6 +18,7 @@ class UserInsert {
 
     //请求API接口
     var user = Users()
+    var error : Error?
     init(){
     }
     func  request(account:String, username:String, password:String, status:String) {
@@ -34,7 +35,7 @@ class UserInsert {
         let dataTask = session.dataTask(with: request,
                                         completionHandler: {(data, response, error) -> Void in
                                             if error != nil{
-                                                print(error.debugDescription)
+                                                self.error = error!
                                             }else if let d = data{
                                                  let newStr = String(data: d, encoding: String.Encoding.utf8)
                                                 //注册后自动登录

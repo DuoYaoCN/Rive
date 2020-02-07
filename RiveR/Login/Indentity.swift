@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class Identity: UIView, NibLoadable, UITableViewDelegate, UITableViewDataSource{
-    static var dataArray:Array<String>?
+    var dataArray:Array<String>?
     @IBOutlet weak var logout: UIButton!
     
     @IBOutlet weak var username: UILabel!
@@ -31,7 +31,7 @@ class Identity: UIView, NibLoadable, UITableViewDelegate, UITableViewDataSource{
     }
     
     func show() {
-        Identity.dataArray = ["拍摄的照片是否保存入系统相册", "账号设置"]
+        self.dataArray = ["拍摄的照片是否保存入系统相册", "账号设置"]
         tableview.register(UINib.init(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCellId")
         tableview.register(UINib.init(nibName: "SettingTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingTableViewCellId")
         //设置代理和数据源
@@ -46,12 +46,12 @@ class Identity: UIView, NibLoadable, UITableViewDelegate, UITableViewDataSource{
     
     //画几个tablecell
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Identity.dataArray!.count
+        return self.dataArray!.count
     }
     
     //有几个分区
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        return 1
     }
     
     //索引栏标题
@@ -67,27 +67,36 @@ class Identity: UIView, NibLoadable, UITableViewDelegate, UITableViewDataSource{
     
     //返回一个cell对象
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         switch indexPath.row {
         case 0: do {
             let cell: IndentityTableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellId", for: indexPath) as! IndentityTableViewCell
             cell.selectionStyle = UITableViewCell.SelectionStyle.none;
-            cell.label.text = Identity.dataArray?[indexPath.row]
+            cell.label.text = self.dataArray?[indexPath.row]
             cell.switch.isOn = Defaults.defaults.bool(forKey: Setting().saving)
             cell.switch.addTarget(self, action: #selector(editSwitchDidChange(_:)), for: .valueChanged)
             return cell
         }
         default: do{
             let cell: SettingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCellId", for: indexPath) as! SettingTableViewCell
-            cell.label.text = Identity.dataArray?[indexPath.row]
+            cell.selectionStyle = UITableViewCell.SelectionStyle.default
+            cell.label.text = self.dataArray?[indexPath.row]
             return cell
             }
         }
 
     }
-    
-    func tableViewDidEndMultipleSelectionInteraction(_ tableView: UITableView) {
-        <#code#>
+
+    //监听cell是否被点击
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //let vc = NativeViewCntroller()
+        //self.present(vc, animated: true)
+        if(indexPath.row == 1){
+            //跳转
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "VC")
+            UIViewController.current()?.navigationController?.pushViewController(vc, animated: true)
+            tableView.cellForRow(at: indexPath)?.isSelected = false
+        }
     }
     
     //监听cell的开关状态

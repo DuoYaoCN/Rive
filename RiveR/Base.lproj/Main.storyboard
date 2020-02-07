@@ -10,7 +10,7 @@
         <!--Item-->
         <scene sceneID="tKj-U6-1mR">
             <objects>
-                <navigationController id="syG-ge-p0G" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="selfs" useStoryboardIdentifierAsRestorationIdentifier="YES" id="syG-ge-p0G" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="FR8-6n-I6P"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hbz-id-4Ib">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -24,11 +24,27 @@
             </objects>
             <point key="canvasLocation" x="419" y="271"/>
         </scene>
+        <!--账户设置-->
+        <scene sceneID="krI-aR-jLb">
+            <objects>
+                <viewController restorationIdentifier="VC" storyboardIdentifier="VC" title="账户设置" id="46i-pX-UhY" customClass="AMViewController" customModule="RiveR" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rkB-RX-KTG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="rkB-RX-KTG" id="Ni7-nc-DLW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEb-O8-3bq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1259" y="1013"/>
+        </scene>
         <!--我的-->
         <scene sceneID="XZ7-Fg-Q2I">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Q8-jY-k73" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="fep-FB-RDv" customClass="SelfViewController" customModule="RiveR" sceneMemberID="viewController">
+                <viewController restorationIdentifier="self" storyboardIdentifier="self" title="我的" id="fep-FB-RDv" customClass="SelfViewController" customModule="RiveR" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pgn-g1-U36">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,6 +54,7 @@
                     <tabBarItem key="tabBarItem" title="我的" image="person.crop.circle.fill" catalog="system" landscapeImage="person.crop.circle.fill" largeContentSizeImage="person.crop.circle.fill" id="3Kb-DF-8nX"/>
                     <navigationItem key="navigationItem" id="qpz-2k-5Vw"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Q8-jY-k73" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="419" y="1013"/>
         </scene>
@@ -90,6 +107,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PH6-Cl-pis" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-361" y="-483"/>
+        </scene>
+        <!--修改信息-->
+        <scene sceneID="1Zr-ZF-MJv">
+            <objects>
+                <viewController storyboardIdentifier="update" title="修改信息" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N6F-eh-WLo" customClass="UpdateViewController" customModule="RiveR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="update" id="wpP-Yj-Ftf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="VC"/>
+                        <viewLayoutGuide key="safeArea" id="EUW-al-eam"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l0h-zb-UfF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fZ-eA-uol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072" y="1013"/>
         </scene>
     </scenes>
     <resources>
