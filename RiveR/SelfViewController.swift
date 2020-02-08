@@ -25,14 +25,15 @@ class SelfViewController: UIViewController{
         if Defaults().get(key: Users_struct().username).elementsEqual("") || Defaults.defaults.bool(forKey: Users_struct().username){
             let login = LoginView.loadFromNib("login")
             login.show()
-            self.view.addSubview(login)
             self.view.removeFromSuperview()
+            self.view.addSubview(login)
+            
         }
         else{
             let identity = Identity.loadFromNib("indentity")
             identity.show()
-            self.view.addSubview(identity)
             self.view.removeFromSuperview()
+            self.view.addSubview(identity)
         }
     }
 }

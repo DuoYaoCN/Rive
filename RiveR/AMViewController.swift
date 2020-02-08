@@ -65,10 +65,52 @@ class AMViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
         else{
             //注销
-            Defaults().remove()
-            self.navigationController?.popToRootViewController(animated: true)
-            self.view.removeFromSuperview()
+            var roll : RollView!
+            let rect = CGRect(x: self.view.center.x-50, y: self.view.center.y-50, width: 100, height: 100)
+            roll = RollView(frame: rect)
+            roll.backgroundColor = UIColor(displayP3Red: 182, green: 179, blue: 182, alpha: 0.8)
+            //roll.setLabel(label: "正在登录")
+            self.view.addSubview(roll)
+            let group = DispatchGroup()
+            let globalQueue = DispatchQueue.global()//创建一个全局队列
+            let del = UserDelete()
+            globalQueue.async(group: group, execute: {
+                del.request(account: Defaults().get(key: Users_struct().userAccount))
+            })
+            group.notify(queue: globalQueue, execute: {
+                //检测到所有的任务都执行完了，我们可以做一个通知或者说UI的处理
+                Thread.sleep(forTimeInterval: 2)
+                if del.dat == nil{
+                    Thread.sleep(forTimeInterval: 5)
+                    DispatchQueue.main.async {
+                        if del.dat == nil{
+                            Defaults().remove()
+                            roll.removeFromSuperview()
+                            self.navigationController?.popToRootViewController(animated: true)
+                            let login = LoginView.loadFromNib("login")
+                            login.show()
+                            UIViewController.current()?.view.addSubview(login)
+                            
+                        }
+                        else{
+                            print("error")
+                        }
+                    }
+                }
+                else{
+                    DispatchQueue.main.async {
+                        Defaults().remove()
+                        roll.removeFromSuperview()
+                        self.navigationController?.popToRootViewController(animated: true)
+                        let login = LoginView.loadFromNib("login")
+                        login.show()
+                        UIViewController.current()?.view.addSubview(login)
+                    }
+                }
+            })
+            
         }
         tableView.cellForRow(at: indexPath)?.isSelected = false
     }
+   
 }

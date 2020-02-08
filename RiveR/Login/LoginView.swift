@@ -22,7 +22,6 @@ class LoginView: UIView, NibLoadable, UITextFieldDelegate{
     
     @IBAction func toLogin(_ sender: Any) {
         let verify = UserVerify()
-        let get = UserGet()
         if account.hasText && password.hasText{
             let acc = account.text
             let pwd = password.text
@@ -38,21 +37,19 @@ class LoginView: UIView, NibLoadable, UITextFieldDelegate{
             globalQueue.async(group: group, execute: {
                 verify.request(account: acc!, password: pwd!)
             })
-            globalQueue.async(group: group, execute: {
-                get.request(account: acc!)
-            })
             group.notify(queue: globalQueue, execute: {
                 //检测到所有的任务都执行完了，我们可以做一个通知或者说UI的处理
                 Thread.sleep(forTimeInterval: 2)
-                if verify.dat == nil && get.dat == nil{
+                if verify.dat == nil{
                     Thread.sleep(forTimeInterval: 5)
                     DispatchQueue.main.async {
-                        if verify.dat == nil && get.dat == nil{
+                        if verify.dat == nil{
                             let identity = Identity.loadFromNib("indentity")
                             identity.show()
                             roll.removeFromSuperview()
                             self.removeFromSuperview()
                             UIViewController.current()?.view.addSubview(identity)
+                            
                         }
                         else{
                             print("error")
@@ -66,6 +63,7 @@ class LoginView: UIView, NibLoadable, UITextFieldDelegate{
                         roll.removeFromSuperview()
                         self.removeFromSuperview()
                         UIViewController.current()?.view.addSubview(identity)
+
                     }
                 }
             })

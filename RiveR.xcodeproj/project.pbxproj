@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18CC671A23ED3CD700A6CF4E /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC671923ED3CD700A6CF4E /* RollView.swift */; };
+		18CC671D23ED9AFA00A6CF4E /* UserDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC671C23ED9AFA00A6CF4E /* UserDelete.swift */; };
 		18D3974E23E946E90000C527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3974D23E946E90000C527 /* AppDelegate.swift */; };
 		18D3975023E946E90000C527 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3974F23E946E90000C527 /* SceneDelegate.swift */; };
 		18D3975223E946E90000C527 /* SelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3975123E946E90000C527 /* SelfViewController.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		18CC671923ED3CD700A6CF4E /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
+		18CC671C23ED9AFA00A6CF4E /* UserDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDelete.swift; sourceTree = "<group>"; };
 		18D3974A23E946E90000C527 /* RiveR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiveR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D3974D23E946E90000C527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D3974F23E946E90000C527 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,12 +134,12 @@
 				18D3975123E946E90000C527 /* SelfViewController.swift */,
 				18D397C023EC4EB90000C527 /* UpdateViewController.swift */,
 				18D3976423E9498C0000C527 /* MainPageViewController.swift */,
+				18D397C823EC53370000C527 /* AMViewController.swift */,
 				18D3975323E946E90000C527 /* Main.storyboard */,
 				18D3975923E946EE0000C527 /* Assets.xcassets */,
 				18D3975B23E946EE0000C527 /* LaunchScreen.storyboard */,
 				18D3975E23E946EE0000C527 /* Info.plist */,
 				18D3975623E946E90000C527 /* RiveR.xcdatamodeld */,
-				18D397C823EC53370000C527 /* AMViewController.swift */,
 			);
 			path = RiveR;
 			sourceTree = "<group>";
@@ -163,6 +165,7 @@
 				18D3976A23E950530000C527 /* UserVerify.swift */,
 				18D3977323EA71D90000C527 /* UsersGet.swift */,
 				18D3978723EB0AA10000C527 /* UserInsert.swift */,
+				18CC671C23ED9AFA00A6CF4E /* UserDelete.swift */,
 			);
 			path = NetRequest;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				18D3977623EA77770000C527 /* HTTP_struct.swift in Sources */,
 				18D3977F23EA99720000C527 /* NibLoadable.swift in Sources */,
 				18D397C623EC51AE0000C527 /* AccountTableViewCell.swift in Sources */,
+				18CC671D23ED9AFA00A6CF4E /* UserDelete.swift in Sources */,
 				18D397B523EBEA970000C527 /* Placeholder.swift in Sources */,
 				18D397B823EBF2AF0000C527 /* SettingTableViewCell.swift in Sources */,
 				18D3976D23EA65E60000C527 /* Defaults.swift in Sources */,
