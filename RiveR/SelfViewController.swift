@@ -32,8 +32,8 @@ class SelfViewController: UIViewController{
         else{
             let identity = Identity.loadFromNib("indentity")
             identity.show()
-            self.view.removeFromSuperview()
             self.view.addSubview(identity)
+            
         }
     }
 }

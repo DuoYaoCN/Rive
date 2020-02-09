@@ -7,8 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187335A723EFF8F6003A7E85 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187335A623EFF8F6003A7E85 /* Base64.swift */; };
+		187335A923F0193B003A7E85 /* UserUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187335A823F0193B003A7E85 /* UserUpdate.swift */; };
+		187335AB23F02151003A7E85 /* SystemSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187335AA23F02151003A7E85 /* SystemSettingViewController.swift */; };
+		187335AE23F021F5003A7E85 /* SystemSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187335AC23F021F5003A7E85 /* SystemSettingTableViewCell.swift */; };
+		187335AF23F021F5003A7E85 /* SystemSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187335AD23F021F5003A7E85 /* SystemSettingTableViewCell.xib */; };
 		18CC671A23ED3CD700A6CF4E /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC671923ED3CD700A6CF4E /* RollView.swift */; };
 		18CC671D23ED9AFA00A6CF4E /* UserDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC671C23ED9AFA00A6CF4E /* UserDelete.swift */; };
+		18CC672023EE5A1200A6CF4E /* IdenTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC671E23EE5A1200A6CF4E /* IdenTitleTableViewCell.swift */; };
+		18CC672123EE5A1200A6CF4E /* IdenTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CC671F23EE5A1200A6CF4E /* IdenTitleTableViewCell.xib */; };
+		18CC672823EEAC7300A6CF4E /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC672623EEAC7300A6CF4E /* AccountTableViewCell.swift */; };
+		18CC672923EEAC7300A6CF4E /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CC672723EEAC7300A6CF4E /* AccountTableViewCell.xib */; };
+		18CC673523EFCD7D00A6CF4E /* ContainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC673423EFCD7D00A6CF4E /* ContainViewController.swift */; };
+		18CC673823EFD57200A6CF4E /* UpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC673623EFD57200A6CF4E /* UpdateTableViewCell.swift */; };
+		18CC673923EFD57200A6CF4E /* UpdateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CC673723EFD57200A6CF4E /* UpdateTableViewCell.xib */; };
 		18D3974E23E946E90000C527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3974D23E946E90000C527 /* AppDelegate.swift */; };
 		18D3975023E946E90000C527 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3974F23E946E90000C527 /* SceneDelegate.swift */; };
 		18D3975223E946E90000C527 /* SelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3975123E946E90000C527 /* SelfViewController.swift */; };
@@ -39,15 +51,24 @@
 		18D397B823EBF2AF0000C527 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397B623EBF2AF0000C527 /* SettingTableViewCell.swift */; };
 		18D397BB23EC05150000C527 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D397BA23EC05150000C527 /* SettingTableViewCell.xib */; };
 		18D397BD23EC45A80000C527 /* ViewControllerExension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397BC23EC45A80000C527 /* ViewControllerExension.swift */; };
-		18D397C123EC4EB90000C527 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397C023EC4EB90000C527 /* UpdateViewController.swift */; };
-		18D397C623EC51AE0000C527 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397C423EC51AE0000C527 /* AccountTableViewCell.swift */; };
-		18D397C723EC51AE0000C527 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D397C523EC51AE0000C527 /* AccountTableViewCell.xib */; };
 		18D397C923EC53370000C527 /* AMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D397C823EC53370000C527 /* AMViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		187335A623EFF8F6003A7E85 /* Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
+		187335A823F0193B003A7E85 /* UserUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdate.swift; sourceTree = "<group>"; };
+		187335AA23F02151003A7E85 /* SystemSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettingViewController.swift; sourceTree = "<group>"; };
+		187335AC23F021F5003A7E85 /* SystemSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettingTableViewCell.swift; sourceTree = "<group>"; };
+		187335AD23F021F5003A7E85 /* SystemSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemSettingTableViewCell.xib; sourceTree = "<group>"; };
 		18CC671923ED3CD700A6CF4E /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		18CC671C23ED9AFA00A6CF4E /* UserDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDelete.swift; sourceTree = "<group>"; };
+		18CC671E23EE5A1200A6CF4E /* IdenTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdenTitleTableViewCell.swift; sourceTree = "<group>"; };
+		18CC671F23EE5A1200A6CF4E /* IdenTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IdenTitleTableViewCell.xib; sourceTree = "<group>"; };
+		18CC672623EEAC7300A6CF4E /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		18CC672723EEAC7300A6CF4E /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		18CC673423EFCD7D00A6CF4E /* ContainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainViewController.swift; sourceTree = "<group>"; };
+		18CC673623EFD57200A6CF4E /* UpdateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTableViewCell.swift; sourceTree = "<group>"; };
+		18CC673723EFD57200A6CF4E /* UpdateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateTableViewCell.xib; sourceTree = "<group>"; };
 		18D3974A23E946E90000C527 /* RiveR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiveR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D3974D23E946E90000C527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D3974F23E946E90000C527 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,9 +101,6 @@
 		18D397B623EBF2AF0000C527 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		18D397BA23EC05150000C527 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		18D397BC23EC45A80000C527 /* ViewControllerExension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExension.swift; sourceTree = "<group>"; };
-		18D397C023EC4EB90000C527 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
-		18D397C423EC51AE0000C527 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
-		18D397C523EC51AE0000C527 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		18D397C823EC53370000C527 /* AMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,15 +142,17 @@
 		18D3974C23E946E90000C527 /* RiveR */ = {
 			isa = PBXGroup;
 			children = (
+				18D3978A23EBCEFD0000C527 /* Tableviewcell */,
 				18CC671823ED3CAC00A6CF4E /* Notification */,
-				18D3977B23EA90AC0000C527 /* Login */,
+				18D3977B23EA90AC0000C527 /* Views */,
 				18D3976E23EA6A830000C527 /* Domain */,
 				18D3976923E9501D0000C527 /* NetRequest */,
 				18D3976623E94F910000C527 /* Dependence */,
 				18D3974D23E946E90000C527 /* AppDelegate.swift */,
 				18D3974F23E946E90000C527 /* SceneDelegate.swift */,
 				18D3975123E946E90000C527 /* SelfViewController.swift */,
-				18D397C023EC4EB90000C527 /* UpdateViewController.swift */,
+				18CC673423EFCD7D00A6CF4E /* ContainViewController.swift */,
+				187335AA23F02151003A7E85 /* SystemSettingViewController.swift */,
 				18D3976423E9498C0000C527 /* MainPageViewController.swift */,
 				18D397C823EC53370000C527 /* AMViewController.swift */,
 				18D3975323E946E90000C527 /* Main.storyboard */,
@@ -155,6 +175,7 @@
 				18D3977523EA77770000C527 /* HTTP_struct.swift */,
 				18D397B423EBEA970000C527 /* Placeholder.swift */,
 				18D397BC23EC45A80000C527 /* ViewControllerExension.swift */,
+				187335A623EFF8F6003A7E85 /* Base64.swift */,
 			);
 			name = Dependence;
 			sourceTree = "<group>";
@@ -166,6 +187,7 @@
 				18D3977323EA71D90000C527 /* UsersGet.swift */,
 				18D3978723EB0AA10000C527 /* UserInsert.swift */,
 				18CC671C23ED9AFA00A6CF4E /* UserDelete.swift */,
+				187335A823F0193B003A7E85 /* UserUpdate.swift */,
 			);
 			path = NetRequest;
 			sourceTree = "<group>";
@@ -178,10 +200,9 @@
 			name = Domain;
 			sourceTree = "<group>";
 		};
-		18D3977B23EA90AC0000C527 /* Login */ = {
+		18D3977B23EA90AC0000C527 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				18D3978A23EBCEFD0000C527 /* tableview */,
 				18D3978523EB07E10000C527 /* Register.xib */,
 				18D3977723EA8D480000C527 /* login.xib */,
 				18D3977923EA8E8E0000C527 /* indentity.xib */,
@@ -189,20 +210,26 @@
 				18D3978123EABB260000C527 /* Indentity.swift */,
 				18D3978323EB07D50000C527 /* Register.swift */,
 			);
-			path = Login;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		18D3978A23EBCEFD0000C527 /* tableview */ = {
+		18D3978A23EBCEFD0000C527 /* Tableviewcell */ = {
 			isa = PBXGroup;
 			children = (
+				18CC672623EEAC7300A6CF4E /* AccountTableViewCell.swift */,
+				18CC672723EEAC7300A6CF4E /* AccountTableViewCell.xib */,
 				18D3978B23EBCF290000C527 /* IndentityTableViewCell.swift */,
-				18D397BA23EC05150000C527 /* SettingTableViewCell.xib */,
 				18D3978C23EBCF290000C527 /* TableViewCell.xib */,
 				18D397B623EBF2AF0000C527 /* SettingTableViewCell.swift */,
-				18D397C423EC51AE0000C527 /* AccountTableViewCell.swift */,
-				18D397C523EC51AE0000C527 /* AccountTableViewCell.xib */,
+				18D397BA23EC05150000C527 /* SettingTableViewCell.xib */,
+				18CC671E23EE5A1200A6CF4E /* IdenTitleTableViewCell.swift */,
+				18CC671F23EE5A1200A6CF4E /* IdenTitleTableViewCell.xib */,
+				18CC673623EFD57200A6CF4E /* UpdateTableViewCell.swift */,
+				18CC673723EFD57200A6CF4E /* UpdateTableViewCell.xib */,
+				187335AC23F021F5003A7E85 /* SystemSettingTableViewCell.swift */,
+				187335AD23F021F5003A7E85 /* SystemSettingTableViewCell.xib */,
 			);
-			path = tableview;
+			path = Tableviewcell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,13 +291,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D3975D23E946EE0000C527 /* LaunchScreen.storyboard in Resources */,
-				18D397C723EC51AE0000C527 /* AccountTableViewCell.xib in Resources */,
+				18CC672923EEAC7300A6CF4E /* AccountTableViewCell.xib in Resources */,
 				18D3975A23E946EE0000C527 /* Assets.xcassets in Resources */,
 				18D397BB23EC05150000C527 /* SettingTableViewCell.xib in Resources */,
 				18D3975523E946E90000C527 /* Main.storyboard in Resources */,
+				18CC673923EFD57200A6CF4E /* UpdateTableViewCell.xib in Resources */,
 				18D3978E23EBCF290000C527 /* TableViewCell.xib in Resources */,
 				18D3977823EA8D480000C527 /* login.xib in Resources */,
 				18D3978623EB07E10000C527 /* Register.xib in Resources */,
+				187335AF23F021F5003A7E85 /* SystemSettingTableViewCell.xib in Resources */,
+				18CC672123EE5A1200A6CF4E /* IdenTitleTableViewCell.xib in Resources */,
 				18D3977A23EA8E8E0000C527 /* indentity.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,10 +325,11 @@
 				18D3974E23E946E90000C527 /* AppDelegate.swift in Sources */,
 				18D3977623EA77770000C527 /* HTTP_struct.swift in Sources */,
 				18D3977F23EA99720000C527 /* NibLoadable.swift in Sources */,
-				18D397C623EC51AE0000C527 /* AccountTableViewCell.swift in Sources */,
 				18CC671D23ED9AFA00A6CF4E /* UserDelete.swift in Sources */,
 				18D397B523EBEA970000C527 /* Placeholder.swift in Sources */,
+				18CC672023EE5A1200A6CF4E /* IdenTitleTableViewCell.swift in Sources */,
 				18D397B823EBF2AF0000C527 /* SettingTableViewCell.swift in Sources */,
+				18CC673823EFD57200A6CF4E /* UpdateTableViewCell.swift in Sources */,
 				18D3976D23EA65E60000C527 /* Defaults.swift in Sources */,
 				18D3978823EB0AA10000C527 /* UserInsert.swift in Sources */,
 				18D3977D23EA90D50000C527 /* LoginView.swift in Sources */,
@@ -307,8 +338,13 @@
 				18D3979023EBD0BE0000C527 /* Setting.swift in Sources */,
 				18D397BD23EC45A80000C527 /* ViewControllerExension.swift in Sources */,
 				18D3978D23EBCF290000C527 /* IndentityTableViewCell.swift in Sources */,
+				187335AB23F02151003A7E85 /* SystemSettingViewController.swift in Sources */,
+				18CC673523EFCD7D00A6CF4E /* ContainViewController.swift in Sources */,
+				18CC672823EEAC7300A6CF4E /* AccountTableViewCell.swift in Sources */,
+				187335AE23F021F5003A7E85 /* SystemSettingTableViewCell.swift in Sources */,
+				187335A723EFF8F6003A7E85 /* Base64.swift in Sources */,
+				187335A923F0193B003A7E85 /* UserUpdate.swift in Sources */,
 				18D3975023E946E90000C527 /* SceneDelegate.swift in Sources */,
-				18D397C123EC4EB90000C527 /* UpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

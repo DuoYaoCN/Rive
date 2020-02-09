@@ -1,16 +1,17 @@
 //
-//  AccountTableViewCell.swift
+//  SystemSettingTableViewCell.swift
 //  RiveR
 //
-//  Created by Duoy on 2020/2/6.
+//  Created by Duoy on 2020/2/9.
 //  Copyright © 2020 雲の祈り. All rights reserved.
 //
 
 import UIKit
 
-class AccountTableViewCell: UITableViewCell {
+class SystemSettingTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textfield: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

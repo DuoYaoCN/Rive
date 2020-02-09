@@ -20,6 +20,9 @@ extension UIViewController {
         if let presented = base?.presentedViewController {
             return current(base: presented)
         }
+        if let table = base as? UITableViewController {
+            return current(base: table)
+        }
         return base
     }
 }

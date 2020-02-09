@@ -67,6 +67,7 @@ class LoginView: UIView, NibLoadable, UITextFieldDelegate{
                     }
                 }
             })
+            print(verify.result)
         }
         else{
             return
@@ -97,7 +98,4 @@ class LoginView: UIView, NibLoadable, UITextFieldDelegate{
         return Bundle.main.loadNibNamed(loadName, owner: nil, options: nil)?.first as! Self
     }
     
-    @objc func jumb(){
-        print("success")
-    }
 }

@@ -10,6 +10,11 @@ import Foundation
 
 class Defaults {
     static let defaults = UserDefaults.standard
+    
+    func save(index:Int, string:String){
+        Defaults.defaults.set(string, forKey: Users_struct().get(index: index)!)
+        Defaults.defaults.synchronize()
+    }
     //保存用户session
     func save(users:Users){
         Defaults.defaults.set(users.get_username(), forKey: Users_struct().username)
@@ -17,7 +22,6 @@ class Defaults {
         Defaults.defaults.set(users.get_account(), forKey: Users_struct().userAccount)
         Defaults.defaults.set(users.get_id(), forKey: Users_struct().userId)
         Defaults.defaults.set(users.get_status(), forKey: Users_struct().userStatus)
-        print(Defaults.defaults)
         Defaults.defaults.synchronize()
     }
     //保存用户设置
