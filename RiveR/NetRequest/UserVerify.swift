@@ -16,9 +16,7 @@ import Vision
 class UserVerify {
     private let url = "verify"
     //请求API接口
-    var result : String?
     var error : Error?
-    var dat : Data?
     init(){
     }
     func  request(account:String, password:String) {
@@ -35,13 +33,17 @@ class UserVerify {
         let dataTask = session.dataTask(with: request,
                                         completionHandler: {(data, response, error) -> Void in
                                             if error != nil{
-                                                self.error = error!
+                                                let notName = Notification.Name(rawValue: Sign().system_error)
+                                                NotificationCenter.default.post(name: notName, object: nil)
                                             }else if let d = data{
-                                                self.dat = d
                                                 let newStr = String(data: d, encoding: String.Encoding.utf8)
-                                                if newStr == "200"{
-                                                    UserGet().request(account: account)
-                                                    self.result = newStr
+                                                if (newStr?.elementsEqual("200"))! {
+                                                    let notName = Notification.Name(rawValue: Sign().verify_success)
+                                                    NotificationCenter.default.post(name: notName, object: nil)
+                                                }
+                                                else{
+                                                    let notName = Notification.Name(rawValue: Sign().verify_error)
+                                                    NotificationCenter.default.post(name: notName, object: nil)
                                                 }
                                             }}) as URLSessionTask
         //使用resume方法启动任务

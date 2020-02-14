@@ -25,4 +25,13 @@ extension UIViewController {
         }
         return base
     }
+    
+    class func initAlert(msg: String, title: String, preferredStyle: UIAlertController.Style){
+        let vc = current()
+        let alertController = UIAlertController(title: title,
+                        message: msg, preferredStyle: preferredStyle)
+        let okAction = UIAlertAction(title: "好的", style: .cancel, handler: nil)
+        alertController.addAction(okAction)
+        vc?.present(alertController, animated: true, completion: nil)
+    }
 }

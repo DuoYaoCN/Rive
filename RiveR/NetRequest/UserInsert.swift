@@ -18,8 +18,6 @@ class UserInsert {
 
     //请求API接口
     var user = Users()
-    var error : Error?
-    var dat : Data?
     init(){
     }
     func  request(account:String, username:String, password:String, status:String) {
@@ -36,20 +34,21 @@ class UserInsert {
         let dataTask = session.dataTask(with: request,
                                         completionHandler: {(data, response, error) -> Void in
                                             if error != nil{
-                                                self.error = error!
-                                            }else if let d = data{
-                                                self.dat = d
-                                                 let newStr = String(data: d, encoding: String.Encoding.utf8)
-                                                //注册后自动登录
-                                                self.user.set_id(id: newStr!)
-                                                self.user.set_account(account: account)
-                                                self.user.set_username(username: username)
-                                                self.user.set_password(password: password)
-                                                self.user.set_status(status: status)
-                                                Defaults().remove()
-                                                Defaults().save()
-                                                Defaults().save(users: self.user)
-                                                
+                                                let notName = Notification.Name(rawValue: Sign().system_error)
+                                                NotificationCenter.default.post(name: notName, object: nil)
+                                            }else if data != nil{
+                                                    let notName = Notification.Name(rawValue: Sign().get_success)
+                                                    NotificationCenter.default.post(name: notName, object: nil)
+                                                let newStr = String(data: data!, encoding: String.Encoding.utf8)
+                                                    //注册后自动登录
+                                                    self.user.set_id(id: newStr!)
+                                                    self.user.set_account(account: account)
+                                                    self.user.set_username(username: username)
+                                                    self.user.set_password(password: password)
+                                                    self.user.set_status(status: status)
+                                                    Defaults().remove()
+                                                    Defaults().save()
+                                                    Defaults().save(users: self.user)
                                             }}) as URLSessionTask
         //使用resume方法启动任务
         dataTask.resume()

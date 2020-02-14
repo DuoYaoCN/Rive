@@ -12,6 +12,8 @@
 		187335AB23F02151003A7E85 /* SystemSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187335AA23F02151003A7E85 /* SystemSettingViewController.swift */; };
 		187335AE23F021F5003A7E85 /* SystemSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187335AC23F021F5003A7E85 /* SystemSettingTableViewCell.swift */; };
 		187335AF23F021F5003A7E85 /* SystemSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187335AD23F021F5003A7E85 /* SystemSettingTableViewCell.xib */; };
+		18AAA09C23F63CD30020F314 /* System_struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AAA09B23F63CD30020F314 /* System_struct.swift */; };
+		18AAA09E23F643030020F314 /* HTTP_struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AAA09D23F643030020F314 /* HTTP_struct.swift */; };
 		18CC671A23ED3CD700A6CF4E /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC671923ED3CD700A6CF4E /* RollView.swift */; };
 		18CC671D23ED9AFA00A6CF4E /* UserDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC671C23ED9AFA00A6CF4E /* UserDelete.swift */; };
 		18CC672023EE5A1200A6CF4E /* IdenTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC671E23EE5A1200A6CF4E /* IdenTitleTableViewCell.swift */; };
@@ -35,7 +37,6 @@
 		18D3977023EA6A8F0000C527 /* Users_struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3976F23EA6A8F0000C527 /* Users_struct.swift */; };
 		18D3977223EA6B8A0000C527 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3977123EA6B8A0000C527 /* Users.swift */; };
 		18D3977423EA71D90000C527 /* UsersGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3977323EA71D90000C527 /* UsersGet.swift */; };
-		18D3977623EA77770000C527 /* HTTP_struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3977523EA77770000C527 /* HTTP_struct.swift */; };
 		18D3977823EA8D480000C527 /* login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D3977723EA8D480000C527 /* login.xib */; };
 		18D3977A23EA8E8E0000C527 /* indentity.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D3977923EA8E8E0000C527 /* indentity.xib */; };
 		18D3977D23EA90D50000C527 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3977C23EA90D50000C527 /* LoginView.swift */; };
@@ -60,6 +61,8 @@
 		187335AA23F02151003A7E85 /* SystemSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettingViewController.swift; sourceTree = "<group>"; };
 		187335AC23F021F5003A7E85 /* SystemSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettingTableViewCell.swift; sourceTree = "<group>"; };
 		187335AD23F021F5003A7E85 /* SystemSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemSettingTableViewCell.xib; sourceTree = "<group>"; };
+		18AAA09B23F63CD30020F314 /* System_struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System_struct.swift; sourceTree = "<group>"; };
+		18AAA09D23F643030020F314 /* HTTP_struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP_struct.swift; sourceTree = "<group>"; };
 		18CC671923ED3CD700A6CF4E /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		18CC671C23ED9AFA00A6CF4E /* UserDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDelete.swift; sourceTree = "<group>"; };
 		18CC671E23EE5A1200A6CF4E /* IdenTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdenTitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,7 +88,6 @@
 		18D3976F23EA6A8F0000C527 /* Users_struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users_struct.swift; sourceTree = "<group>"; };
 		18D3977123EA6B8A0000C527 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		18D3977323EA71D90000C527 /* UsersGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGet.swift; sourceTree = "<group>"; };
-		18D3977523EA77770000C527 /* HTTP_struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP_struct.swift; sourceTree = "<group>"; };
 		18D3977723EA8D480000C527 /* login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = login.xib; sourceTree = "<group>"; };
 		18D3977923EA8E8E0000C527 /* indentity.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = indentity.xib; sourceTree = "<group>"; };
 		18D3977C23EA90D50000C527 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -170,10 +172,11 @@
 				18D3978F23EBD0BE0000C527 /* Setting.swift */,
 				18D3977E23EA99720000C527 /* NibLoadable.swift */,
 				18D3976F23EA6A8F0000C527 /* Users_struct.swift */,
+				18AAA09D23F643030020F314 /* HTTP_struct.swift */,
+				18D397B423EBEA970000C527 /* Placeholder.swift */,
+				18AAA09B23F63CD30020F314 /* System_struct.swift */,
 				18D3976723E94FBD0000C527 /* SwiftJSON.swift */,
 				18D3976C23EA65E60000C527 /* Defaults.swift */,
-				18D3977523EA77770000C527 /* HTTP_struct.swift */,
-				18D397B423EBEA970000C527 /* Placeholder.swift */,
 				18D397BC23EC45A80000C527 /* ViewControllerExension.swift */,
 				187335A623EFF8F6003A7E85 /* Base64.swift */,
 			);
@@ -207,8 +210,8 @@
 				18D3977723EA8D480000C527 /* login.xib */,
 				18D3977923EA8E8E0000C527 /* indentity.xib */,
 				18D3977C23EA90D50000C527 /* LoginView.swift */,
-				18D3978123EABB260000C527 /* Indentity.swift */,
 				18D3978323EB07D50000C527 /* Register.swift */,
+				18D3978123EABB260000C527 /* Indentity.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,10 +326,10 @@
 				18D3977423EA71D90000C527 /* UsersGet.swift in Sources */,
 				18CC671A23ED3CD700A6CF4E /* RollView.swift in Sources */,
 				18D3974E23E946E90000C527 /* AppDelegate.swift in Sources */,
-				18D3977623EA77770000C527 /* HTTP_struct.swift in Sources */,
 				18D3977F23EA99720000C527 /* NibLoadable.swift in Sources */,
 				18CC671D23ED9AFA00A6CF4E /* UserDelete.swift in Sources */,
 				18D397B523EBEA970000C527 /* Placeholder.swift in Sources */,
+				18AAA09E23F643030020F314 /* HTTP_struct.swift in Sources */,
 				18CC672023EE5A1200A6CF4E /* IdenTitleTableViewCell.swift in Sources */,
 				18D397B823EBF2AF0000C527 /* SettingTableViewCell.swift in Sources */,
 				18CC673823EFD57200A6CF4E /* UpdateTableViewCell.swift in Sources */,
@@ -338,6 +341,7 @@
 				18D3979023EBD0BE0000C527 /* Setting.swift in Sources */,
 				18D397BD23EC45A80000C527 /* ViewControllerExension.swift in Sources */,
 				18D3978D23EBCF290000C527 /* IndentityTableViewCell.swift in Sources */,
+				18AAA09C23F63CD30020F314 /* System_struct.swift in Sources */,
 				187335AB23F02151003A7E85 /* SystemSettingViewController.swift in Sources */,
 				18CC673523EFCD7D00A6CF4E /* ContainViewController.swift in Sources */,
 				18CC672823EEAC7300A6CF4E /* AccountTableViewCell.swift in Sources */,

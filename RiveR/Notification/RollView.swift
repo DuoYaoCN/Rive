@@ -13,6 +13,8 @@ class RollView: UIView {
     
     private var label : UILabel!
     
+    var text : String?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -36,19 +38,16 @@ class RollView: UIView {
         self.aut.isHidden = false
         self.aut.startAnimating()
         self.label = UILabel(frame: CGRect(x: label_x, y: label_y, width: label_width, height: label_height))
-        self.label.text = "正在处理"
+        self.label.text = self.text
         self.label.textColor = UIColor.gray
         self.label.textAlignment = .center
         self.label.adjustsFontSizeToFitWidth = true
         self.layer.cornerRadius = 6.0
         self.layer.borderWidth = 0.5
-        
         self.addSubview(self.aut)
         self.addSubview(self.label)
     }
-    
-    func setLabel(label:String){
-        self.label.text = label
+    func setLabel(text:String){
+        self.text = text
     }
-
 }

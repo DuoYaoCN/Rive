@@ -16,12 +16,58 @@ class SystemSettingViewController: UIViewController, UITableViewDelegate, UITabl
     
     var dataarray : Array<String>?
     
+    var roll : RollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataarray = ["退出登录", "注销账户"]
         self.tableview.register(UINib.init(nibName: "SystemSettingTableViewCell", bundle: nil), forCellReuseIdentifier: "SystemSettingTableViewCellId")
         self.tableview.dataSource = self
         self.tableview.delegate = self
+        
+        /// 注册通知组件
+        // 成功
+        NotificationCenter.default.addObserver(self, selector: #selector(self.delSuccess), name: Notification.Name(rawValue: Sign().delete_success), object: nil)
+        // 失败
+        NotificationCenter.default.addObserver(self, selector: #selector(self.delError), name: Notification.Name(rawValue: Sign().delete_error), object: nil)
+        
+        // 服务器出现问题
+        NotificationCenter.default.addObserver(self, selector: #selector(self.sysError), name: Notification.Name(rawValue: Sign().system_error), object: nil)
+    }
+    
+    @objc func delSuccess(){
+        DispatchQueue.main.async {
+            self.roll.removeFromSuperview()
+            /// 删除通知组件
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().delete_success), object: nil)
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().delete_error), object: nil)
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().system_error), object: nil)
+            
+            Defaults().remove()
+            self.navigationController?.popViewController(animated: true)
+            UIViewController.current()?.viewDidLoad()
+        }
+    }
+    
+    @objc func delError(){
+        DispatchQueue.main.async {
+            self.roll.removeFromSuperview()
+            UIViewController.initAlert(msg: "删除失败", title: "系统提示", preferredStyle: .alert)
+        }
+    }
+    
+    @objc func sysError(){
+        DispatchQueue.main.async {
+            self.roll.removeFromSuperview()
+            UIViewController.initAlert(msg: "无法连接到服务器", title: "系统提示", preferredStyle: .alert)
+        }
+    }
+    
+    @objc func delUser(){
+        DispatchQueue.main.async {
+            let delete = UserDelete()
+            delete.request(account: Defaults().get(key: Users_struct().userAccount))
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,43 +96,17 @@ class SystemSettingViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var roll : RollView!
-        let rect = CGRect(x: self.view.center.x-50, y: self.view.center.y-50, width: 100, height: 100)
-        roll = RollView(frame: rect)
-        roll.backgroundColor = UIColor(displayP3Red: 182, green: 179, blue: 182, alpha: 0.8)
-        self.view.addSubview(roll)
         if indexPath.section == 1{
-            let group = DispatchGroup()
-            let globalQueue = DispatchQueue.global()//创建一个全局队列
-            let delete = UserDelete()
-            globalQueue.async(group: group, execute: {
-                delete.request(account: Defaults().get(key: Users_struct().userAccount))
-            })
-            group.notify(queue: globalQueue, execute: {
-                //检测到所有的任务都执行完了，我们可以做一个通知或者说UI的处理
-                Thread.sleep(forTimeInterval: 2)
-                if delete.dat == nil{
-                    Thread.sleep(forTimeInterval: 5)
-                    DispatchQueue.main.async {
-                        if delete.dat == nil{
-                            roll.removeFromSuperview()
-                        }
-                        else{
-                            print("error")
-                        }
-                    }
-                }
-                else{
-                    DispatchQueue.main.async {
-                        roll.removeFromSuperview()
-
-                    }
-                }
-            })
+            var del : Thread?
+            del = Thread(target: self, selector: #selector(self.delUser), object: nil)
+            del?.start()
+            
+            let rect = CGRect(x: self.view.center.x-50, y: self.view.center.y-50, width: 100, height: 100)
+            self.roll = RollView(frame: rect)
+            self.roll.setLabel(text: "正在删除")
+            self.roll.backgroundColor = UIColor(displayP3Red: 182, green: 179, blue: 182, alpha: 0.8)
+            self.view.addSubview(self.roll)
         }
-        Defaults().remove()
-        self.navigationController?.popViewController(animated: true)
-        UIViewController.current()?.viewDidLoad()
     }
     
 }

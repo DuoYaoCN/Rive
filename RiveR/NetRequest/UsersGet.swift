@@ -17,8 +17,6 @@ class UserGet {
     private let url = "get"
     //请求API接口
     var user = Users()
-    var error : Error?
-    var dat : Data?
     init(){
     }
     func  request(account:String) {
@@ -36,9 +34,9 @@ class UserGet {
         let dataTask = session.dataTask(with: request,
                                         completionHandler: {(data, response, error) -> Void in
                                             if error != nil{
-                                                self.error = error!
+                                                let notName = Notification.Name(rawValue: Sign().get_error)
+                                                NotificationCenter.default.post(name: notName, object: nil)
                                             }else if let d = data{
-                                                self.dat = d
                                                 json = try! JSON(data: d)
                                                 self.user.set_id(id: json[Users_struct().userId].string!)
                                                 self.user.set_account(account: json[Users_struct().userAccount].string!)
@@ -48,6 +46,8 @@ class UserGet {
                                                 Defaults().remove()
                                                 Defaults().save()
                                                 Defaults().save(users: self.user)
+                                                let notName = Notification.Name(rawValue: Sign().get_success)
+                                                NotificationCenter.default.post(name: notName, object: nil)
                                             }}) as URLSessionTask
         //使用resume方法启动任务
         dataTask.resume()

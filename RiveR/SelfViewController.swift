@@ -21,7 +21,6 @@ class SelfViewController: UIViewController{
         //let aSelector : Selector = #selector(SelfViewController.removeSubview)
         //let tapGesture = UITapGestureRecognizer(target:self, action: aSelector)
         //self.view.addGestureRecognizer(tapGesture)
-        
         if Defaults().get(key: Users_struct().username).elementsEqual("") || Defaults.defaults.bool(forKey: Users_struct().username){
             let login = LoginView.loadFromNib("login")
             login.show()
@@ -32,6 +31,7 @@ class SelfViewController: UIViewController{
         else{
             let identity = Identity.loadFromNib("indentity")
             identity.show()
+            self.view.removeFromSuperview()
             self.view.addSubview(identity)
             
         }

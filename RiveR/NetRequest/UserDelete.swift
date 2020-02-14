@@ -16,9 +16,6 @@ import Vision
 class UserDelete {
     private let url = "delete"
     //请求API接口
-    var result : String?
-    var error : Error?
-    var dat : Data?
     init(){
     }
     func  request(account:String) {
@@ -35,11 +32,19 @@ class UserDelete {
         let dataTask = session.dataTask(with: request,
                                         completionHandler: {(data, response, error) -> Void in
                                             if error != nil{
-                                                self.error = error!
-                                            }else if let d = data{
-                                                self.dat = d
-                                                let newStr = String(data: d, encoding: String.Encoding.utf8)
-                                                self.result = newStr
+                                                let notName = Notification.Name(rawValue: Sign().system_error)
+                                                NotificationCenter.default.post(name: notName, object: nil)
+                                            }else if data != nil{
+                                                let newStr = String(data: data!, encoding: String.Encoding.utf8)
+                                                if (newStr?.elementsEqual("200"))!{
+                                                    let notName = Notification.Name(rawValue: Sign().delete_success)
+                                                    NotificationCenter.default.post(name: notName, object: nil)
+                                                }
+                                                else{
+                                                    let notName = Notification.Name(rawValue: Sign().delete_error)
+                                                    NotificationCenter.default.post(name: notName, object: nil)
+                                                }
+                                                
                                             }}) as URLSessionTask
         //使用resume方法启动任务
         dataTask.resume()
