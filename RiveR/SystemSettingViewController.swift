@@ -107,6 +107,16 @@ class SystemSettingViewController: UIViewController, UITableViewDelegate, UITabl
             self.roll.backgroundColor = UIColor(displayP3Red: 182, green: 179, blue: 182, alpha: 0.8)
             self.view.addSubview(self.roll)
         }
+        else {
+            /// 删除通知组件
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().delete_success), object: nil)
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().delete_error), object: nil)
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().system_error), object: nil)
+            
+            Defaults().remove()
+            self.navigationController?.popViewController(animated: true)
+            UIViewController.current()?.viewDidLoad()
+        }
     }
     
 }

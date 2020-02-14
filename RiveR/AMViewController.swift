@@ -15,6 +15,8 @@ class AMViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     var dataArray: Array<String>?
     var subTitle : [String] = []
     
+    var roll : RollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib.init(nibName: "AccountTableViewCell", bundle: nil), forCellReuseIdentifier: "account")
@@ -37,6 +39,97 @@ class AMViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.delegate = self
         tableView.dataSource = self
         
+        /// 注册通知组件
+        // 成功
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateSuccess), name: Notification.Name(rawValue: Sign().update_success), object: nil)
+        // 失败
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateError), name: Notification.Name(rawValue: Sign().update_error), object: nil)
+        
+        // 服务器出现问题
+        NotificationCenter.default.addObserver(self, selector: #selector(self.sysError), name: Notification.Name(rawValue: Sign().system_error), object: nil)
+    }
+    
+    @objc func updateSuccess(){
+        DispatchQueue.main.async {
+            self.roll.removeFromSuperview()
+            
+            let identity = Identity.loadFromNib("indentity")
+            identity.show()
+            self.navigationController?.popViewController(animated: true)
+            UIViewController.current()?.viewDidLoad()
+            UIViewController.current()?.view.addSubview(identity)
+            
+            ///删除注册组件
+            // 成功
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().update_success), object: nil)
+            // 失败
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().update_error), object: nil)
+            
+            // 服务器出现问题
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().system_error), object: nil)
+            
+            UIViewController.initAlert(msg: "更新信息成功", title: "系统通知", preferredStyle: .alert)
+        }
+    }
+    
+    @objc func updateError(){
+        DispatchQueue.main.async {
+            self.roll.removeFromSuperview()
+            
+            let identity = Identity.loadFromNib("indentity")
+            identity.show()
+            self.navigationController?.popViewController(animated: true)
+            UIViewController.current()?.viewDidLoad()
+            UIViewController.current()?.view.addSubview(identity)
+            
+            ///删除注册组件
+            // 成功
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().update_success), object: nil)
+            // 失败
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().update_error), object: nil)
+            
+            // 服务器出现问题
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().system_error), object: nil)
+            
+            UIViewController.initAlert(msg: "更新失败", title: "系统通知", preferredStyle: .alert)
+        }
+    }
+    
+    @objc func sysError(){
+        DispatchQueue.main.async {
+            self.roll.removeFromSuperview()
+            
+            let identity = Identity.loadFromNib("indentity")
+            identity.show()
+            self.navigationController?.popViewController(animated: true)
+            UIViewController.current()?.viewDidLoad()
+            UIViewController.current()?.view.addSubview(identity)
+            
+            ///删除注册组件
+            // 成功
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().update_success), object: nil)
+            // 失败
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().update_error), object: nil)
+            
+            // 服务器出现问题
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Sign().system_error), object: nil)
+            
+            UIViewController.initAlert(msg: "无法连接到服务器", title: "系统通知", preferredStyle: .alert)
+        }
+    }
+    
+    @objc func userUpdate(){
+        DispatchQueue.main.async {
+            let user = Users()
+            user.set_id(id: Defaults().get(key: Users_struct().userId))
+            user.set_username(username: Defaults().get(key: Users_struct().username))
+            user.set_account(account: Defaults().get(key: Users_struct().userAccount))
+            user.set_password(password: Defaults().get(key: Users_struct().userpasswd))
+            user.set_status(status: Defaults().get(key: Users_struct().userStatus))
+            let update = UserUpdate()
+            
+            update.request(user: user)
+        }
     }
     
     /**
@@ -70,7 +163,6 @@ class AMViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.title.text = dataArray![indexPath.section]
         cell.userdata.text = subTitle[indexPath.section]
         cell.userdata.adjustsFontSizeToFitWidth = true
-        //cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         return cell
     }
@@ -85,59 +177,20 @@ class AMViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let vc = sb.instantiateViewController(withIdentifier: "contain")
         ContainViewController.data = subTitle[indexPath.section]
         ContainViewController.index = indexPath.section
+        ContainViewController.title = dataArray![indexPath.section]
         UIViewController.current()?.navigationController?.pushViewController(vc, animated: true)
     }
 
     @IBAction func onClick(_ sender: Any) {
-        var roll : RollView!
         let rect = CGRect(x: self.view.center.x-50, y: self.view.center.y-50, width: 100, height: 100)
         roll = RollView(frame: rect)
+        roll.setLabel(text: "正在更新")
         roll.backgroundColor = UIColor(displayP3Red: 182, green: 179, blue: 182, alpha: 0.8)
         self.view.addSubview(roll)
-        let user = Users()
-        user.set_id(id: Defaults().get(key: Users_struct().userId))
-        user.set_username(username: Defaults().get(key: Users_struct().username))
-        user.set_account(account: Defaults().get(key: Users_struct().userAccount))
-        user.set_password(password: Defaults().get(key: Users_struct().userpasswd))
-        user.set_status(status: Defaults().get(key: Users_struct().userStatus))
-        let update = UserUpdate()
-        let group = DispatchGroup()
-        let globalQueue = DispatchQueue.global()//创建一个全局队列
-        globalQueue.async(group: group, execute: {
-            update.request(user: user)
-        })
-        group.notify(queue: globalQueue, execute: {
-            //检测到所有的任务都执行完了，我们可以做一个通知或者说UI的处理
-            Thread.sleep(forTimeInterval: 2)
-            if update.dat == nil{
-                Thread.sleep(forTimeInterval: 5)
-                DispatchQueue.main.async {
-                    if update.dat == nil{
-                        let identity = Identity.loadFromNib("indentity")
-                        identity.show()
-                        roll.removeFromSuperview()
-                        self.navigationController?.popViewController(animated: true)
-                        UIViewController.current()?.viewDidLoad()
-                        UIViewController.current()?.view.addSubview(identity)
-                        
-                    }
-                    else{
-                        print("error")
-                    }
-                }
-            }
-            else{
-                DispatchQueue.main.async {
-                    let identity = Identity.loadFromNib("indentity")
-                    identity.show()
-                    roll.removeFromSuperview()
-                    self.navigationController?.popViewController(animated: true)
-                    UIViewController.current()?.viewDidLoad()
-                    UIViewController.current()?.view.addSubview(identity)
-
-                }
-            }
-        })
+        
+        var update : Thread?
+        update = Thread(target: self, selector: #selector(self.userUpdate), object: nil)
+        update?.start()
     }
     
 }

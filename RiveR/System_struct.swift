@@ -21,5 +21,8 @@ struct Sign {
     let delete_success = "del_200"
     let delete_error = "del_404"
     
+    let update_success = "update_200"
+    let update_error = "update_404"
+    
 }
 

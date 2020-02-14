@@ -16,6 +16,7 @@ class ContainViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var okBtn: UIButton!
     static var data : String?
     static var index : Int?
+    static var title : String?
     
     var cell : UpdateTableViewCell!
     
@@ -25,7 +26,12 @@ class ContainViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         self.cell = tableView.dequeueReusableCell(withIdentifier: "UpdateTableViewCellId", for: indexPath) as? UpdateTableViewCell
-        self.cell.textfield.text = ContainViewController.data!
+        if ContainViewController.index == 3 {
+            self.cell.textfield.text = ContainViewController.data!.fromBase64()
+        }
+        else{
+            self.cell.textfield.text = ContainViewController.data!
+        }
         self.cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         return cell
     }
@@ -36,10 +42,10 @@ class ContainViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.title = ContainViewController.title!
         self.tableView.register(UINib.init(nibName: "UpdateTableViewCell", bundle: nil), forCellReuseIdentifier: "UpdateTableViewCellId")
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        //self.okBtn.value(forKey: "完成")
     }
     @IBAction func onClick(_ sender: Any) {
         self.cell.textfield.resignFirstResponder()
