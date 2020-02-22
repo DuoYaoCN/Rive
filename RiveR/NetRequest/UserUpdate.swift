@@ -24,7 +24,7 @@ class UserUpdate {
     func  request(user:Users) {
         //接口地址（使用http://也可以，记得再info.plist里做相关的配置）
         var httpUrl = HTTP_struct().host + self.url + "/" + user.get_account() + "/"
-        httpUrl = httpUrl + user.get_username() + "/" + user.get_password() + "/"
+        httpUrl = httpUrl + user.get_username() + "/" + user.get_password().fromBase64()! + "/"
         httpUrl = httpUrl + user.get_status() + "/" + user.get_id()
         //参数拼接
         let config = URLSessionConfiguration.default

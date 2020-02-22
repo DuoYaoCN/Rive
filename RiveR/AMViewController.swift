@@ -19,6 +19,7 @@ class AMViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "修改信息"
         self.tableView.register(UINib.init(nibName: "AccountTableViewCell", bundle: nil), forCellReuseIdentifier: "account")
         self.dataArray = ["标识", "账号","昵称", "密码", "国籍"]
         subTitle = []
@@ -126,6 +127,7 @@ class AMViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             user.set_account(account: Defaults().get(key: Users_struct().userAccount))
             user.set_password(password: Defaults().get(key: Users_struct().userpasswd))
             user.set_status(status: Defaults().get(key: Users_struct().userStatus))
+            print(user.get_password())
             let update = UserUpdate()
             
             update.request(user: user)
@@ -162,6 +164,9 @@ class AMViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let cell : AccountTableViewCell = tableView.dequeueReusableCell(withIdentifier: "account") as! AccountTableViewCell
         cell.title.text = dataArray![indexPath.section]
         cell.userdata.text = subTitle[indexPath.section]
+        if indexPath.section == 3{
+            cell.userdata.text = subTitle[indexPath.section].toBase64()
+        }
         cell.userdata.adjustsFontSizeToFitWidth = true
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         return cell

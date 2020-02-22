@@ -40,16 +40,25 @@ class ContainViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 55
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ContainViewController.title!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.title = ContainViewController.title!
+        self.navigationItem.title = ContainViewController.title!
         self.tableView.register(UINib.init(nibName: "UpdateTableViewCell", bundle: nil), forCellReuseIdentifier: "UpdateTableViewCellId")
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
     @IBAction func onClick(_ sender: Any) {
         self.cell.textfield.resignFirstResponder()
-        ContainViewController.data = self.cell.textfield.text
+        if ContainViewController.index == 3 {
+            ContainViewController.data = self.cell.textfield.text?.toBase64()
+        }
+        else{
+            ContainViewController.data = self.cell.textfield.text
+        }
         Defaults().save(index: ContainViewController.index!, string: ContainViewController.data!)
         UIViewController.current()?.navigationController?.popViewController(animated: true)
         UIViewController.current()?.viewDidLoad()
